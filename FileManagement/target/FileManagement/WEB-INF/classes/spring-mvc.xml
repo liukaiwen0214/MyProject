@@ -19,8 +19,9 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-
-    <mvc:resources mapping="/**/*.html" location="/WEB-INF/views/"/>
+    <mvc:viewcontrollers>
+        <mvc:viewcontroller path="/add_user.html" viewname="forward:/add_user.html"/>
+    </mvc:viewcontrollers>
 
     <!-- 开启SpringMVC注解支持 -->
     <mvc:annotation-driven/>

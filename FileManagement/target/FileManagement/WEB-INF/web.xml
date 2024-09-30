@@ -19,6 +19,15 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>service</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/shopping/cart.do</url-pattern>
+  </servlet-mapping>
+
 
   <!-- 配置Spring的ContextLoaderListener，加载Spring核心配置文件 -->
   <context-param>
