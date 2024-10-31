@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+
+    <!--1. 配置自动扫描的包（service层）-->
+    <context:component-scan base-package="com.lucky.service"/>
+
+
+    <!--2.加载外部属性配置文件（jdbc.properties）-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!-- 2.1配置数据源-->
+<!--    <bean id="druidDataSource" class="com.mysql.jdbc.Driver">-->
+    <bean id="druidDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="dataSourceName" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="driverClass" value="${jdbc.driver}"/>
+    </bean>
+    <!--========================================mybatis整合==============================================================-->
+
+    <!--3.配置SqlsessionFactoryBean，整合mybatis-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--3.1指定mybatis全局配置文件-->
+        <!-- 方法1：保留全局配置文件-指定Mybatis全局配置文件-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+
+        <!--方法2：舍弃mybatis全局配置文件，这样写-->
+        <!-- <property name="configuration">-->
+        <!-- <bean class="org.apache.ibatis.session.Configuration">-->
+        <!--  <property name="mapUnderscoreToCamelCase" value="true"/>-->
+        <!--  </bean>-->
+        <!-- </property>-->
+        <!--方法2：舍弃mybatis全局配置文件，这样写-->
+        <!-- <property name="typeAliasesPackage" value="com.atguigu.ssm.entity"/>-->
+
+        <!-- 3.2 指定Mapper配置文件位置-->
+        <property name="mapperLocations" value="classpath:mappers/*Mapper.xml"/>
+
+        <!--3.3装配数据源(我们在上面配置的数据源)-->
+        <property name="dataSource" ref="druidDataSource"/>
+    </bean>
+    <!--方法1-->
+    <!--4. 使用mybatis-spring命名空间-->
+    <mybatis-spring:scan base-package="com.lucky.mapper"/>
+    <!--方法2-->
+    <!--4.配置mapper接口（代理对象加入到ioc容器中）类型的bean的扫描器-->
+    <!--  <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+    <!--  <property name="basePackage" value="com.atguigu.ssm.mapper"/>-->
+    <!--  </bean>-->
+    <!--==================================mybatis整合==============================================================-->
+
+    <!--5.配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--5.1 装配数据源（要能管事务就要控制住数据源，数据源中连接，回滚等操作）-->
+        <property name="dataSource" ref="druidDataSource"/>
+    </bean>
+
+    <!--6.开启基于注解的声明式事务-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>
