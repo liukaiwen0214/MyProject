@@ -23,4 +23,9 @@ public class UserServiceImpl implements UserService {
     public Integer againLogin(String username, String password) {
         return userMapper.againLogin(username, password);
     }
+
+    @Override
+    public Integer addUser(User user) {
+        return userMapper.insertUser(user);
+    }
 }

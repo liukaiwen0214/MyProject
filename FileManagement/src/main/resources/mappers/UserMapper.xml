@@ -4,13 +4,25 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.lucky.mapper.UserMapper">
-
+    <!--
+    INSERT INTO pwuser (username, password, address)
+    VALUES ('TEST1', 'TEST1', '广东省');
+    -->
+    <insert id="insertUser">
+        insert into users(id, username, password, email)
+        values (#{user.id}, #{user.username}, #{user.password}, #{user.email})
+    </insert>
     <!--获取list-->
     <select id="getAllConsumer" resultType="com.lucky.entity.User">
-        select * from users
+        select *
+        from users
     </select>
+    <!--用户登陆-->
     <select id="againLogin" resultType="integer">
-        select count(*) from users where username = #{arg0} and password = #{arg1}
+        select count(*)
+        from users
+        where username = #{arg0}
+          and password = #{arg1}
     </select>
 
 

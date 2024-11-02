@@ -11,4 +11,7 @@ public interface UserService {
 
     //    登陆
     Integer againLogin(String username, String password);
+
+    //    新增用户
+    Integer addUser(User user);
 }
