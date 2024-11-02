@@ -1,0 +1,32 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="VulnerableLibrariesLocal" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="isIgnoringEnabled" value="true" />
+      <option name="ignoredModules">
+        <list>
+          <option value="FileManagement" />
+          <option value="FileManagement" />
+          <option value="FileManagement" />
+          <option value="FileManagement" />
+        </list>
+      </option>
+      <option name="ignoredPackages">
+        <list>
+          <option value="log4j:log4j:1.2.17" />
+          <option value="commons-io:commons-io:2.11.0" />
+          <option value="org.thymeleaf:thymeleaf-spring5:3.0.12.RELEASE" />
+          <option value="com.google.protobuf:protobuf-java:3.11.4" />
+        </list>
+      </option>
+      <option name="ignoredReasons">
+        <list>
+          <option value="不可利用" />
+          <option value="不可利用" />
+          <option value="不可利用" />
+          <option value="不可利用" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
