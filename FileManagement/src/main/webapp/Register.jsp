@@ -17,7 +17,8 @@
                                             name="username"/> <br><br>
         <p id="PPassWord">密 码：</p><input id="UserPasswordInputId" class="UserPasswordInputClass" type="password"
                                            name="password"/> <br><br>
-        <p id="PEmail">邮 箱：</p><input id="EmailInputId" class="EmailInputClass" type="text" name="email"/> <br><br>
+        <p id="PEmail">邮 箱：</p><input id="EmailInputId" class="EmailInputClass" type="text"
+                                        name="email"/> <br><br>
         <input id="UserSubmitId" class="UserSubmitClass" type="submit" value="注册"/>
     </form>
     <p id="NameId" class="NameClass">

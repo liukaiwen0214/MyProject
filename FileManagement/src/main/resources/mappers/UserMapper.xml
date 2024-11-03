@@ -10,7 +10,7 @@
     -->
     <insert id="insertUser">
         insert into users(id, username, password, email)
-        values (#{user.id}, #{user.username}, #{user.password}, #{user.email})
+        values (#{id}, #{username}, #{password}, #{email})
     </insert>
     <!--获取list-->
     <select id="getAllConsumer" resultType="com.lucky.entity.User">

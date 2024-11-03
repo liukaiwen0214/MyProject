@@ -31,8 +31,6 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     private String againLogin(@Param("username") String userName, @Param("password") String password, HttpServletRequest request) {
         Integer b = userService.againLogin(userName, password);
-        logger.info("ceshi");
-        System.out.println("*************数据库查询结果：" + b);
         if (b >= 1) {
             return "/LoginSuccessfully";
         }
@@ -40,16 +38,22 @@ public class UserController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    private String addUser(@Param("username") String userName, @Param("password") String password, @Param("email") String email, HttpServletRequest request) {
+    private String addUser(
+            @Param("username") String username,
+            @Param("password") String password,
+            @Param("email") String email,
+            HttpServletRequest request) {
         User user = new User();
-        user.setUsername(userName);
+        user.setUsername(username);
         user.setPassword(password);
         user.setEmail(email);
+        logger.info("测试是否走到set user的位置");
+        logger.info(username);
         List<User> userList = userService.getAllConsumer();
         user.setId(userList.size() + 1);
         Integer addUserCount = userService.addUser(user);
         if (addUserCount >= 1) {
-            return "/RegisterSuccessfully";
+            return "/LoginSuccessfully";
         }
         return "/LoginFailed";
     }

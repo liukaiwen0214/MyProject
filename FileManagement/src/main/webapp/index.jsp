@@ -70,6 +70,7 @@
     #UserNameInputId {
         /*border: 1px solid rgba(225, 213, 213, 0.4);*/
         width: 60%;
+        font-family: 'Muyao-Softbrush', sans-serif;
         height: 12%;
         border-radius: 10px;
         background: rgba(225, 213, 213, 0.4);
