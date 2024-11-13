@@ -1,0 +1,117 @@
+body {
+    /*background-image: url("/static/images/bg-oEDCYcDF.png");*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#BigDiv {
+    position: absolute;
+    width: 342px;
+    height: 500px;
+    left: 70%;
+    top: 25%;
+    /*background-color: azure;*/
+}
+
+#Account_Login_Span {
+    /*font-family: 'Muyao-Softbrush', sans-serif;*/
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(168, 166, 166);
+}
+#log_in_to_div{
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    /*background-color: cadetblue;*/
+}
+#log_in_to_span{
+    font-size: 20px;
+}
+#email_login_div{
+    position: absolute;
+    top: 25%;
+    left: 40%;
+}
+#email_login_span{
+    font-size: 20px;
+}
+#register_an_account_div{
+    position: absolute;
+    top: 25%;
+    left: 75%;
+}
+#register_an_account_span{
+    font-size: 20px;
+}
+#number_image{
+    background-image: url("../images/index-yonghu.png");
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(235,235,235);
+    /*top: %;*/
+    /*top: auto;*/
+    width: 40px;
+    height: 40px;
+}
+#your_account-number_div{
+    position: absolute;
+    border: 1px rgb(197,197,197) solid;
+    width: 318px;
+    height: 40px;
+    left: 5%;
+    top: 45%;
+    /*background-color: #da0053;*/
+}
+#your_account_number{
+    position: absolute;
+    border: 0px;
+    background-color: rgb(235,235,235);
+    outline: none;
+    left: 40px;
+    height: 38px;
+    width: 273px;
+    font-size: 20px;
+    top: 0px;
+}
+#no_number{
+    position: absolute;
+    color: #e13d3d;
+    font-size: 15px;
+}
+#your_account_password_div{
+    position: absolute;
+    border: 1px rgb(197,197,197) solid;
+    width: 318px;
+    height: 40px;
+    left: 5%;
+    top: 65%;
+    /*background-color: #da0053;*/
+}
+#your_account_password{
+    position: absolute;
+    border: 0px;
+    background-color: rgb(235,235,235);
+    outline: none;
+    left: 40px;
+    height: 38px;
+    width: 273px;
+    font-size: 20px;
+    top: 0px;
+}
+#password_image{
+    background-image: url("../images/index-yonghu.png");
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(235,235,235);
+    /*top: %;*/
+    /*top: auto;*/
+    width: 40px;
+    height: 40px;
+}

@@ -20,7 +20,7 @@
 </head>
 <body>
 <%--式神模块--%>
-<div id="FigureAtlas" onclick="tests()">
+<div id="FigureAtlas" onclick="test()">
 
 </div>
 <%--御魂模块--%>
@@ -45,29 +45,9 @@
 </html>
 <%-- src="https://code.jquery.com/jquery-3.3.1.min.js"--%>
 <script type="text/javascript">
-    document.getElementById('myDiv').addEventListener('click', function () {
-        // 创建一个新的 XMLHttpRequest 对象
-        var xhr = new XMLHttpRequest();
-
-        // 配置请求类型（GET或POST），URL以及是否异步
-        xhr.open('POST', '/path/to/your/controller', true);
-        // 设置请求完成的回调函数
-        xhr.onload = function () {
-            if (xhr.status >= 200 && xhr.status < 300) {
-                // 请求成功，可以处理返回的数据
-                console.log(xhr.responseText);
-            } else {
-                // 请求出错
-                console.error(xhr.statusText);
-            }
-        };
-        // 设置请求失败的回调函数
-        xhr.onerror = function () {
-            console.error("请求失败");
-        };
-        // 发送请求
-        xhr.send();
-    });
+    function test() {
+        location.href = "/FileManagement_war_exploded/information"
+    }
 </script>
 <style>
     /*自定义字体*/

@@ -30,7 +30,7 @@
 
 <style>
     body {
-        background-image: url("Images/RegisterImage.png");
+        /*background-image: url("static/images/");*/
         background-repeat: no-repeat;
         background-position: center center;
         background-attachment: fixed;
